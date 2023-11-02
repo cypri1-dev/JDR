@@ -1,0 +1,86 @@
+JDR
+
+HANS 
+
+PV:  19/27
+Niv : 5
+Armure : 10
+Classe : Prêtre
+Race : Humain
+Dé de vie : d6
+
+OBJETS
+
+Equipés : Marteau de Guerre (D8) Cuirasse
+Sac : Nécessaire de soins, Pierre précieuse (magique), potion de soin (10pv).
+Bourse : 43 PO
+
+COMPÉTENCES
+
+(passives) : +3 dégâts vs démons
+
+Bénédiction de l’éclairé : donne d12 PV à qqun (1/3tours) ; améliorable
+
+Lumière divine : Repousse les démons (6 cases – 1/combat)
+
+Sermon : (CHA) Peut persuader un ennemi de se rendre/créature 
+
+Marteau du Jugement : Occasionne double des dégâts. Si max d8, assommé (1/3tours) ; améliorable.
+
+Intervention Divine (Spé 40) : Une fois par combat et une fois par jour, Hans peut décider de changer la valeur d’un D20 tiré
+par le MJ ou par un joueur.
+
+Toucher bénéfique (Spé 70) : Du bout de ses doigts brillants de lumière, Hans peut annuler les effets néfastes d’une malédiction ou d’un sort. Utilisable 1 fois par combat.
+
+Éclair divin : 
+
+Onde bénéfique :
+
+STATS
+
+                STATS        
+FORCE	12
+DEXTERITE	8
+INTELLIGENCE	10
+CHARISME	13
+SAGESSE	8
+
+
+JOURNAL
+
+Combat araignées
+-8pv
+-10pv / emp
+-4pv
++12pv ~~~> 20pv
++1 pierre précieuse (magique)
+
+Combat Golem
+-1pv
+Fin combat
+
+Explosion golem —> -6pv
+
+Nouveau jour
+Heal sur Xartas +12
+Heal sur Balthazar +11
+Heal sur Hans + 2
+Reçois potion de Xartas 
+
+Étage 2
+
+PV : 15/27
+Combat contre élémentaire de feu
+PV : 12/27
+Intervention divine ! 
+Court repos : 18/27
+
+Nouveau jour
+Heal sur moi +5pv
+Heal sur Balthazar
+Heal sur Xartas 
+Heal sur Sun
+PV : 23/27
+Potion donnée à Balthazar
+
+
