@@ -6,14 +6,14 @@
 #    By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 15:12:39 by cyprien           #+#    #+#              #
-#    Updated: 2024/03/30 15:55:52 by cyprien          ###   ########.fr        #
+#    Updated: 2024/03/30 19:34:08 by cyprien          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = story
 CC = cc
 RM = rm -rf
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wextra -Werror -g3
 
 BOLD    = \e[1m
 FADE    = \e[2m
@@ -42,17 +42,25 @@ OBJS = $(SRC:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	@echo "$(BOLD)Linking...$(RESET)"
 	$(RM) $(NAME)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@echo "$(GREEN)Executable '$(NAME)' created successfully!$(RESET)"
 
 %.o: %.c
+	@echo "$(BOLD)Compiling $<...$(RESET)"
 	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "$(GREEN)$@ compiled successfully!$(RESET)"
 
 clean:
+	@echo "$(BOLD)Cleaning object files...$(RESET)"
 	$(RM) $(OBJS)
+	@echo "$(GREEN)Object files cleaned successfully!$(RESET)"
 
 fclean: clean
+	@echo "$(BOLD)Cleaning executable...$(RESET)"
 	$(RM) $(NAME)
+	@echo "$(GREEN)Executable cleaned successfully!$(RESET)"
 
 re: fclean all
 
