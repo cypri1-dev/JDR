@@ -6,11 +6,33 @@
 /*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 03:37:35 by cyprien           #+#    #+#             */
-/*   Updated: 2024/03/30 18:48:29 by cyprien          ###   ########.fr       */
+/*   Updated: 2024/03/30 21:19:22 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/story.h"
+
+t_character init_statistics(t_character *character)
+{
+	clear_terminal();
+	display_txt("chapters/init_stats.txt");
+	printf("Appuyer sur 1 pour continuer !\n");
+	scanf("%c", &character->answer);
+	clear_input_buffer();
+	update_character(character);
+	switch(character->answer)
+	{
+		case '1':
+			 roll_stats(character);
+			 printf("PERSO INIT SUCCESS\n");
+			 break;
+		default:
+			printf("Wrong choice !\n");
+              		sleep(1);
+              		return init_statistics(character);
+	}
+	return (*character);
+}
 
 t_character init_rules_3(t_character *character)
 {
@@ -23,8 +45,7 @@ t_character init_rules_3(t_character *character)
     switch(character->answer)
     {
         case '1':
-            printf("GG\n");
-            return *character;
+            return init_statistics(character);
         default:
             printf("Wrong choice !\n");
             sleep(1);
