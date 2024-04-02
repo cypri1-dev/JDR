@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 03:37:35 by cyprien           #+#    #+#             */
-/*   Updated: 2024/04/02 11:35:24 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/04/02 16:08:10 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,15 @@ t_character init_statistics(t_character *character)
 	{
 		case '1':
 			 roll_stats(character);
-			 printf("PERSO INIT SUCCESS\n");
+			 printf("Endurance [%d]/[%d]\n", character->endurance, character->max_endurance);
+             printf("Habilite [%d]/[%d]\n", character->ability, character->max_ability);
+             sleep(1);
+             test_fight(character);
 			 break;
 		default:
 			printf("Wrong choice !\n");
-              		sleep(1);
-              		return init_statistics(character);
+            sleep(1);
+            return init_statistics(character);
 	}
 	return (*character);
 }

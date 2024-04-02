@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   story.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
+/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 16:10:29 by cyprien           #+#    #+#             */
-/*   Updated: 2024/03/30 21:11:05 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/04/02 17:03:32 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,8 @@ t_character init_rules_2(t_character *character);
 t_character init_rules_3(t_character *character);
 t_character roll_stats(t_character *character);
 void clear_input_buffer();
+void	test_fight(t_character *character);
+int	initiative_roll(t_character *character, int *monster_endu, int *monster_ability, char *monster_name);
+void	fight(t_character *character, char *monster_name, int *monster_endu, int *monster_ability);
 
 int main (void);

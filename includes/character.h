@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 02:12:25 by cyprien           #+#    #+#             */
-/*   Updated: 2024/04/02 14:06:27 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/04/02 16:49:00 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #define DEATH 10
 #define EQUIPED 1
 #define UNEQUIPED 0
+#define CHARACTER_ATTACK 2
+#define MONSTER_ATTACK 3
 
 
 typedef struct s_character

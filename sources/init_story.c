@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_story.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
+/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 16:07:50 by cyprien           #+#    #+#             */
-/*   Updated: 2024/03/30 18:51:13 by cyprien          ###   ########.fr       */
+/*   Updated: 2024/04/02 15:14:09 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ static  t_character init_character(t_character *character)
 
 void    clear_terminal()
 {
-    printf("\033[2J");
-    printf("\033[H");   
+    system("clear");
+    // printf("\033[2J");
+    // printf("\033[H");   
 }
 
 void    display_txt(const char *chapter)
@@ -95,6 +96,7 @@ int main (void)
             break;
         default:
             printf("Wrong choice looser!\n");
+            free(character);
             sleep(1);
             return main();
     }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+         #
+#    By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 15:12:39 by cyprien           #+#    #+#              #
-#    Updated: 2024/03/30 19:34:08 by cyprien          ###   ########.fr        #
+#    Updated: 2024/04/02 16:06:07 by cyferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,9 @@ GREY    = \e[38;5;254m
 RESET   = \e[00m
 
 SOURCE = ./sources/
-INIT = character.c init_story.c menu.c rules.c
-GAME = $(addprefix $(SOURCE), $(INIT))
+INIT = character.c init_story.c menu.c rules.c 
+FIGHT = fight.c tests_fight.c
+GAME = $(addprefix $(SOURCE), $(INIT) $(FIGHT))
 
 SRC = $(GAME)
 OBJS = $(SRC:%.c=%.o)
