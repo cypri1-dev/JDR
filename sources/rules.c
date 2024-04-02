@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rules.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
+/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 03:37:35 by cyprien           #+#    #+#             */
-/*   Updated: 2024/03/30 21:19:22 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/04/02 11:35:24 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ t_character init_rules_2(t_character *character)
             sleep(1);
             return init_rules_2(character);
     }
+    // if (character.dead)
+    //     return DEATH;
 }
 
 t_character init_rules(t_character *character)
