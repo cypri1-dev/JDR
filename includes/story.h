@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 16:10:29 by cyprien           #+#    #+#             */
-/*   Updated: 2024/04/02 17:03:32 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:49:45 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 /*all prototypes*/
 
-void display_menu(void);
+void display_menu(t_character *character, int (f)(void));
 void    display_txt(const char *chapter);
 void    clear_terminal();
 t_character update_character(t_character *charcater);
