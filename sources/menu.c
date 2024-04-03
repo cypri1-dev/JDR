@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   menu.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+        */
+/*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 18:06:36 by cyprien           #+#    #+#             */
-/*   Updated: 2024/03/30 02:29:47 by cyprien          ###   ########.fr       */
+/*   Updated: 2024/04/03 11:50:09 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,29 @@ void    back_to_story(const char *chapter)
     display_txt(chapter);
 }
 
-void display_menu(void)
-{
-    int choice;
-    
+void display_menu(t_character *character, int (f)(void)) 
+{    
     printf("\t\t\t\tMENU\n\n");
     printf("1. INVENTAIRE\t");
-    printf("2. SAC A DOS\t");
-    printf("3. SAUVEGARDE\t");
-    printf("4. PERSONNAGE\t");
-    printf("5. RETOUR\t");
-    printf("6. Quitter\t\n\n");
+    printf("2. SAUVEGARDE\t");
+    printf("3. PERSONNAGE\t");
+    printf("4. RETOUR\t");
+    printf("5. Quitter\t\n\n");
     printf("Votre choix : ");
-    scanf("%d", &choice);
-    switch (choice)
+    scanf("%s", &character->answer);
+    clear_input_buffer();
+    switch (character->answer)
     {
-        case 5:
-            clear_terminal();
-            main();
+        case '1':
+            //open_inventory();
+            break;
+        case '2':
+            //save_game();
+            break;
+        case '3':
+            //open_character();
+        case '4':
+            f();
             break;
     }
 }
