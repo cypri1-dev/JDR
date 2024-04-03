@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 02:12:25 by cyprien           #+#    #+#             */
-/*   Updated: 2024/04/02 16:49:00 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/04/03 13:55:50 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 #define UNEQUIPED 0
 #define CHARACTER_ATTACK 2
 #define MONSTER_ATTACK 3
+#define LUCK_ATTACK 4
+#define UNLUCK_ATTACK 5
+#define WRONG_CHOICE "Wrong choice !\n" "texte"
+#define ZERO_INIT 0
 
 
 typedef struct s_character
