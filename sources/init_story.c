@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 16:07:50 by cyprien           #+#    #+#             */
-/*   Updated: 2024/04/03 11:49:06 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/04/03 13:49:29 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int main (void)
             display_menu(character, &main);
             break;
         default:
-            printf("Wrong choice looser!\n");
+            printf(WRONG_CHOICE);
             free(character);
             sleep(1);
             return main();

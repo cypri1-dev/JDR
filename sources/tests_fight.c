@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 15:56:42 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/04/02 17:28:27 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/04/03 12:35:33 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	test_fight(t_character *character)
 	switch (character->answer)
 	{
 		case '1':
-			fight(character, monster_name, &barbarian_endu, &barbarian_ability);
+			fight(character, monster_name, &barbarian_endu, &barbarian_ability, 1, 1);
 			break;
 	
 		default:
