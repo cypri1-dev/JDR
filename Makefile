@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+         #
+#    By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 15:12:39 by cyprien           #+#    #+#              #
-#    Updated: 2024/04/02 16:06:07 by cyferrei         ###   ########.fr        #
+#    Updated: 2024/08/25 19:09:20 by cyprien          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = story
 CC = cc
 RM = rm -rf
 CFLAGS = -Wextra -Werror -g3
+OBJDIR = obj
 
 BOLD    = \e[1m
 FADE    = \e[2m
@@ -38,24 +39,27 @@ FIGHT = fight.c tests_fight.c
 GAME = $(addprefix $(SOURCE), $(INIT) $(FIGHT))
 
 SRC = $(GAME)
-OBJS = $(SRC:%.c=%.o)
+OBJS = $(patsubst $(SOURCE)%.c, $(OBJDIR)/%.o, $(SRC))
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJDIR) $(OBJS)
 	@echo "$(BOLD)Linking...$(RESET)"
 	$(RM) $(NAME)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@echo "$(GREEN)Executable '$(NAME)' created successfully!$(RESET)"
 
-%.o: %.c
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
+$(OBJDIR)/%.o: $(SOURCE)%.c
 	@echo "$(BOLD)Compiling $<...$(RESET)"
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 	@echo "$(GREEN)$@ compiled successfully!$(RESET)"
 
 clean:
 	@echo "$(BOLD)Cleaning object files...$(RESET)"
-	$(RM) $(OBJS)
+	$(RM) $(OBJDIR)
 	@echo "$(GREEN)Object files cleaned successfully!$(RESET)"
 
 fclean: clean
