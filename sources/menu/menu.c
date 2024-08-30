@@ -6,11 +6,11 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 18:06:36 by cyprien           #+#    #+#             */
-/*   Updated: 2024/04/03 11:50:09 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:02:20 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/story.h"
+#include "../../includes/story.h"
 
 void    back_to_story(const char *chapter)
 {

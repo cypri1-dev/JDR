@@ -6,11 +6,11 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 14:20:04 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/04/03 14:24:40 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:02:13 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/story.h"
+#include "../../includes/story.h"
 
 int	initiative_roll(t_character *character, int *monster_endu, int *monster_ability, char *monster_name)
 {

@@ -6,11 +6,11 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 15:56:42 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/04/03 12:35:33 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:02:11 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/story.h"
+#include "../../includes/story.h"
 
 void	test_fight(t_character *character)
 {

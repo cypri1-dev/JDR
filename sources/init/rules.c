@@ -6,11 +6,11 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 03:37:35 by cyprien           #+#    #+#             */
-/*   Updated: 2024/04/02 16:08:10 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:02:05 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/story.h"
+#include "../../includes/story.h"
 
 t_character init_statistics(t_character *character)
 {

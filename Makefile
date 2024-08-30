@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cyprien <cyprien@student.42.fr>            +#+  +:+       +#+         #
+#    By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 15:12:39 by cyprien           #+#    #+#              #
-#    Updated: 2024/08/25 19:09:20 by cyprien          ###   ########.fr        #
+#    Updated: 2024/08/30 12:12:30 by cyferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME = story
 CC = cc
 RM = rm -rf
 CFLAGS = -Wextra -Werror -g3
-OBJDIR = obj
 
 BOLD    = \e[1m
 FADE    = \e[2m
@@ -33,29 +32,40 @@ PEACH   = \e[38;5;223m
 GREY    = \e[38;5;254m
 RESET   = \e[00m
 
-SOURCE = ./sources/
-INIT = character.c init_story.c menu.c rules.c 
-FIGHT = fight.c tests_fight.c
-GAME = $(addprefix $(SOURCE), $(INIT) $(FIGHT))
+SOURCE = sources
+INIT = $(wildcard $(SOURCE)/init/*.c)
+FIGHT = $(wildcard $(SOURCE)/fight/*.c)
+MENU = $(wildcard $(SOURCE)/menu/*.c)
 
-SRC = $(GAME)
-OBJS = $(patsubst $(SOURCE)%.c, $(OBJDIR)/%.o, $(SRC))
+OBJDIR = obj
+INIT_DIR = $(OBJDIR)/init
+MENU_DIR = $(OBJDIR)/menu
+FIGHT_DIR = $(OBJDIR)/fight
+
+OBJDIRS := $(OBJDIR) $(INIT_DIR) $(MENU_DIR) $(FIGHT_DIR)
+
+SRC = $(INIT) $(FIGHT) $(MENU)
+
+OBJ_INIT = $(INIT:sources/%.c=obj/%.o)
+OBJ_FIGHT = $(FIGHT:sources/%.c=obj/%.o)
+OBJ_MENU = $(MENU:sources/%.c=obj/%.o)
+OBJS = $(OBJ_INIT) $(OBJ_MENU) $(OBJ_FIGHT)
 
 all: $(NAME)
 
-$(NAME): $(OBJDIR) $(OBJS)
+$(NAME): $(OBJDIRS) $(OBJS)
 	@echo "$(BOLD)Linking...$(RESET)"
 	$(RM) $(NAME)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@echo "$(GREEN)Executable '$(NAME)' created successfully!$(RESET)"
 
-$(OBJDIR):
-	mkdir -p $(OBJDIR)
-
-$(OBJDIR)/%.o: $(SOURCE)%.c
+$(OBJDIR)/%.o: $(SOURCE)/%.c
 	@echo "$(BOLD)Compiling $<...$(RESET)"
 	$(CC) $(CFLAGS) -c $< -o $@
 	@echo "$(GREEN)$@ compiled successfully!$(RESET)"
+
+$(OBJDIRS):
+	mkdir -p $(OBJDIRS)
 
 clean:
 	@echo "$(BOLD)Cleaning object files...$(RESET)"

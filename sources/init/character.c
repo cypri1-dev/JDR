@@ -6,11 +6,11 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 03:09:35 by cyprien           #+#    #+#             */
-/*   Updated: 2024/04/02 11:40:25 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:02:02 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/story.h"
+#include "../../includes/story.h"
 
 t_character roll_stats(t_character *character)
 {
