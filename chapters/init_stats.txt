@@ -1,6 +1,0 @@
-		   NOW LETS ROLL SOME DICE !
-
-Et voici maintenant le moment tant attendu et redoute : les jets
-de statistique du heros ! Tout est automatise ! Pour decouvrir les
-decouvrir (et y avoir acces) ouvre le menu et rends toi dans l'
-onglet PERSONNAGE.

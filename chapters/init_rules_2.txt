@@ -1,8 +1,0 @@
-                💻  LE RESTE EST AUTOMATIQUE HEHE ! 🎲
-
-Lancez un dé. Ajoutez 6 au chiffre obtenu et inscrivez le total dans la
-case HABILETÉ de la Feuille d'Aventure. Lancez ensuite les deux dés.
-Ajoutez 12 au chiffre obtenu et inscrivez le total dans la case
-ENDURANCE. Il eXIST...... BLABLABLA ! 
-
-Voici mtn la version BASH developpee en C par Adshum...
