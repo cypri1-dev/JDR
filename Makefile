@@ -6,14 +6,14 @@
 #    By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/19 17:04:01 by cyferrei          #+#    #+#              #
-#    Updated: 2024/11/21 11:05:40 by cyferrei         ###   ########.fr        #
+#    Updated: 2024/11/21 15:35:59 by cyferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bashDungeon
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
-SRC = monsters/Monsters.cpp main.cpp
+CXX = g++
+CXXFLAGS = -Wall -Wextra -Werror -g3
+SRC = monsters/Monsters.cpp character/Character.cpp character/Inventory.cpp menu/Menu.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
