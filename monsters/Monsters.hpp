@@ -6,15 +6,16 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:37:14 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/11/21 10:42:57 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/11/21 11:33:51 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include "../colors.hpp"
+
 #include <string>
 #include <iostream>
-#include "../colors.hpp"
 
 class Monsters {
 	private:
@@ -36,3 +37,5 @@ class Monsters {
 		void setEP(unsigned int amount);
 		void setSP(unsigned int amount);
 };
+
+std::ostream &operator<<(std::ostream &out, const Monsters &m);

@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:30:11 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/11/21 11:05:57 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/11/21 15:39:29 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,3 +54,12 @@ void Monsters::setEP(unsigned int amount) { this->_EP = amount; }
 void Monsters::setSP(unsigned int amount) { this->_SP = amount; }
 
 /************************************************************************************************/
+
+std::ostream &operator<<(std::ostream &out, const Monsters &m) {
+	out << BOLD_ON << "**********" << BOLD_OFF << std::endl;
+	out << BOLD_ON << "name: " << BLUE << m.getName() << BOLD_OFF << "." << std::endl;
+	out << BOLD_ON << "EP: " << BLUE << m.getEP() << BOLD_OFF << "." << std::endl;
+	out << BOLD_ON << "SP: " << BLUE << m.getSP() << BOLD_OFF << "." << std::endl;
+	out << BOLD_ON << "**********" << BOLD_OFF << std::endl;
+	return (out);
+}
