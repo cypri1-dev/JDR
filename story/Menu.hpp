@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:59:49 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/11/22 13:20:54 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/11/22 16:41:10 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include "../colors.hpp"
 #include <sstream>
+#include <string>
+#include <unordered_map>
 #include <vector>
 #include <termios.h>
 #include <unistd.h>
@@ -21,21 +23,24 @@
 
 #include "../character/Character.hpp"
 
+#define BOOK_PATH "story/parsed_chapters.json"
 using namespace std;
-
-typedef enum { MAIN_MENU, CHARACTER_MENU, INVENTORY_MENU } e_menu;
 
 class Menu {
 	public:
 		Menu();
 		~Menu();
 
-		int displayMenu(const Character &c, e_menu mode, const stringstream &text = stringstream()) const;
-		void displayCharacter(const Character &c)const;
-		void displayInventory(const Character &c)const;
+		void displayMenu(const Character &c, const string &location, const string &text = "");
+		string getChapterText(const int chapter_no);
+		string getInventoryText(const Character &c);
+		string getCharacterText(const Character &c);
+		string getText(string option, const Character &c);
+		void addMenuOptions(...);
 		// void save();
 		// void exitMenu;
 	private:
-		vector<vector<string>> menu_options;
+		unordered_map<string, vector<string>> menu_options;
 		void clearConsole() const;
+		vector<string> chapters; // struct for chapters
 };

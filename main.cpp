@@ -6,14 +6,14 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:06:38 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/11/22 13:29:15 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/11/22 16:49:19 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "monsters/Monsters.hpp"
 #include "character/Character.hpp"
 #include "character/Inventory.hpp"
-#include "menu/Menu.hpp"
+#include "story/Menu.hpp"
 #include <sstream>
 
 int main (void) {
@@ -33,6 +33,6 @@ int main (void) {
 
 	Menu menu;
 
-	menu.displayMenu(character, MAIN_MENU);
+	menu.displayMenu(character, "1", menu.getChapterText(1));
 	return (0);
 }
