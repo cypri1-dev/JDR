@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:59:49 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/11/21 17:33:55 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/11/22 13:20:54 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@
 
 using namespace std;
 
-typedef enum { MAIN_MENU, CHARACTER_MENU } e_menu;
+typedef enum { MAIN_MENU, CHARACTER_MENU, INVENTORY_MENU } e_menu;
 
 class Menu {
 	public:
 		Menu();
 		~Menu();
 
-		int displayMenu(e_menu mode, const stringstream &text = stringstream()) const;
+		int displayMenu(const Character &c, e_menu mode, const stringstream &text = stringstream()) const;
 		void displayCharacter(const Character &c)const;
-		void displayInventory(const Inventory &inv)const;
+		void displayInventory(const Character &c)const;
 		// void save();
 		// void exitMenu;
 	private:

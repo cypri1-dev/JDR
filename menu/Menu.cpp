@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:59:52 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/11/21 17:36:46 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/11/22 13:31:41 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,21 @@ Menu::Menu() {
 		"Save", "Exit"
 	};
 	std::vector<std::string> character_menu_options = {
-		"Main menu",
+		"Main menu", "Display Inventory",
+		"Save", "Exit"
+	};
+	std::vector<std::string> inventory_menu_options = {
+		"Main menu", "Display Character",
+		"Save", "Exit"
+	};
+	std::vector<std::string> save_menu_options = {
+		"Main menu", "Display Character",
+		"Display Inventory", "Exit"
 	};
 	this->menu_options.push_back(main_menu_options);
 	this->menu_options.push_back(character_menu_options);
+	this->menu_options.push_back(inventory_menu_options);
+	this->menu_options.push_back(save_menu_options);
 }
 
 Menu::~Menu() {
@@ -46,24 +57,20 @@ void Menu::displayCharacter(const Character &c)const {
 	text << BOLD_ON << "[Habilite]: " << c.getSP() << BOLD_OFF << "/" << BOLD_ON BLUE << c.getBaseSP() << BOLD_OFF << std::endl;
 	text << BOLD_ON << "[Chance]: " << c.getLP() << BOLD_OFF << "/" << BOLD_ON BLUE << c.getBaseLP() << BOLD_OFF << std::endl;
 
-
-	this->displayMenu(CHARACTER_MENU, text);
-	int selectedIndex = this->displayMenu(MAIN_MENU);
-	switch (selectedIndex) {
-		case 0: this->displayCharacter(c); break;
-		case 1: this->displayInventory(c._inventory); break;
-		case 2: break;
-		case 3: break;
-	}
+	this->displayMenu(c, CHARACTER_MENU, text);
 }
 
 /************************************************************************************************/
 
 
-void Menu::displayInventory(const Inventory &inv)const {
-	std::cout << BOLD_ON YELLOW << "*****INVENTORY******" << BOLD_OFF << std::endl << std::endl;
-	for (size_t i = 0; inv.getItems(i).size(); i++)
-		std::cout << BOLD_ON BLUE << "[" << i << "]" << BOLD_OFF << ": " << BOLD_ON << inv.getItems(i) << BOLD_OFF << std::endl;
+void Menu::displayInventory(const Character &c)const {
+
+	stringstream text;
+	text << BOLD_ON YELLOW << "*****INVENTORY******" << BOLD_OFF << std::endl << std::endl;
+	for (size_t i = 0; c._inventory.getItems(i).size(); i++)
+		text << BOLD_ON BLUE << "[" << i << "]" << BOLD_OFF << ": " << BOLD_ON << c._inventory.getItems(i) << BOLD_OFF << std::endl;
+
+	this->displayMenu(c, INVENTORY_MENU, text);
 }
 
 /************************************************************************************************/
@@ -92,7 +99,7 @@ void configureTerminal(bool enable) {
 
 typedef void (Menu::*menu_func)(void); 
 
-int Menu::displayMenu(e_menu mode, const stringstream& text) const{
+int Menu::displayMenu(const Character &c, e_menu mode, const stringstream& text) const{
 	size_t selectedIndex = 0;
 	char input = 0;
 
@@ -129,9 +136,39 @@ int Menu::displayMenu(e_menu mode, const stringstream& text) const{
 	configureTerminal(false); // Restaure les paramètres du terminal
 
 	clearConsole();
-	std::cout << "You selected: " << options[selectedIndex] << "\n";
+	switch(mode) {
+		case MAIN_MENU:
+		{
+			switch (selectedIndex) 
+			{
+				case 0: this->displayCharacter(c); break;
+				case 1: this->displayInventory(c); break;
+				case 2: break;
+				case 3: break;
+			} break;
+		}
+		case CHARACTER_MENU:
+		{
+			switch (selectedIndex) 
+			{
+				case 0: this->displayMenu(c, MAIN_MENU); break;
+				case 1: this->displayInventory(c); break;
+				case 2: break;
+				case 3: break;
+			}break;
+		}
+		case INVENTORY_MENU:
+		{
+			switch (selectedIndex) 
+			{
+				case 0: this->displayMenu(c, MAIN_MENU); break;
+				case 1: this->displayCharacter(c); break;
+				case 2: break;
+				case 3: break;
+			}break;
+		}
+	}
 	return selectedIndex;
-	
 }
 
 /************************************************************************************************/
