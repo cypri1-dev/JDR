@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:06:38 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/11/21 17:34:39 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/11/22 13:29:15 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,6 @@ int main (void) {
 
 	Menu menu;
 
-	int selectedIndex = menu.displayMenu(MAIN_MENU);
-	switch (selectedIndex) {
-		case 0: menu.displayCharacter(character); break;
-		case 1: menu.displayInventory(character._inventory); break;
-		case 2: break;
-		case 3: break;
-	}
-	
+	menu.displayMenu(character, MAIN_MENU);
 	return (0);
 }
