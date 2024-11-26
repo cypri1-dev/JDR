@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:59:52 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/11/22 17:07:49 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:16:01 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,11 @@ Menu::Menu() {
 	this->addMenuOptions("Display Character", "Main Menu", "Display Inventory", "Save", "Exit", 0);
 	this->addMenuOptions("Display Inventory", "Main Menu", "Display Character", "Save", "Exit", 0);
 	this->addMenuOptions("Save", "Main Menu", "Display Character", "Display Inventory", "Exit", 0);
-	this->addMenuOptions("1", "Main Menu", "77", "278", 0);
-	this->addMenuOptions("77", "Main Menu", "345", "18", 0);
+	this->addMenuOptions("1", "Main Menu", "71", "278", 0);
+	this->addMenuOptions("2", "Main Menu", "16", "249", 0); // tenter sa chance! -> 16 if false 249 if true!
+	// this->addMenuOptions("2", "Main Menu", (Luck(6, 4) == true) ? "16" : "249", 0); // tenter sa chance! -> 16 if false 249 if true!
+	this->addMenuOptions("71", "Main Menu", "345", "18", 0);
+
 
 	ifstream file = ifstream(BOOK_PATH);
 
@@ -52,15 +55,11 @@ Menu::Menu() {
 		if (i++ == 0) continue;
 		size_t start = line.find(":") + 2;
 		size_t end = line.rfind(",") - 1;
-		cout << line[end] << endl;
 		line = line.substr(start, end - start);
 		for (size_t newline_pos; (newline_pos = line.find("\\n", 0)) != string::npos;) {
 			line.replace(newline_pos, 2, "\n");
 		}
 		this->chapters.push_back(line);
-	}
-	for(vector<string>::iterator it = this->chapters.begin(); it != this->chapters.end(); it++) {
-		cout << *it << endl;
 	}
 }
 

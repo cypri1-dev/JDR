@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:59:49 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/11/22 16:41:10 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:29:58 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 #include <vector>
 #include <termios.h>
 #include <unistd.h>
-#include <map>
 
 #include "../character/Character.hpp"
 
