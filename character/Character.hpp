@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:08:10 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/11/21 15:22:08 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:25:00 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 
 #include <string>
 #include <iostream>
+
+#define BASE_EP 12
+#define BASE_SP 6
+#define BASE_LP 6
 
 class Character {
 	private:
@@ -48,11 +52,12 @@ class Character {
 		void setName(std::string name);
 		void setEP(unsigned int amount);
 		void setSP(unsigned int amount);
+		void setLP(unsigned int amount);
 		void setBaseEP(unsigned int amount);
 		void setBaseSP(unsigned int amount);
 		void setBaseLP(unsigned int amount);
 
-
 };
 
 std::ostream &operator<<(std::ostream &out, const Character &character);
+unsigned int rollDice(void);
